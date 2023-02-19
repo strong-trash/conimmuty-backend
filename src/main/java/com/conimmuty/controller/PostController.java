@@ -7,10 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,7 +30,7 @@ public class PostController {
     }
 
     @PostMapping("/post")
-    public ResponseEntity<Void> save(PostRequestDTO req) {
+    public ResponseEntity<Void> save(@RequestBody PostRequestDTO req) {
         String title = req.getTitle();
         String content = req.getContent();
         postService.saveOne(title, content);

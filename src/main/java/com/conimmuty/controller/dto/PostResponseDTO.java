@@ -2,17 +2,19 @@ package com.conimmuty.controller.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class PostResponseDTO {
-    private Long pid;
-    private String title;
-    private String content;
-    private Integer likeCnt;
-    private Integer dislikeCnt;
-    private Integer commentCnt;
-    private LocalDateTime createdAt;
+    public Long pid;
+    public String title;
+    public String content;
+    public Integer likeCnt;
+    public Integer dislikeCnt;
+    public Integer commentCnt;
+    public LocalDateTime createdAt;
 }

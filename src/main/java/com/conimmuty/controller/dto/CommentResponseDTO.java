@@ -2,14 +2,16 @@ package com.conimmuty.controller.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class CommentResponseDTO {
-    private Long cid;
-    private Long pid;
-    private String body;
-    private LocalDateTime createdAt;
+    public Long cid;
+    public Long pid;
+    public String body;
+    public LocalDateTime createdAt;
 }
