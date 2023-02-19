@@ -3,6 +3,7 @@ package com.conimmuty.service;
 import com.conimmuty.controller.dto.PostResponseDTO;
 import com.conimmuty.domain.PostEntity;
 import com.conimmuty.repository.PostRepository;
+import com.conimmuty.support.Utility;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,8 @@ public class PostService {
     private final PostRepository postRepository;
 
     public void saveOne(String title, String content) {
+        title = Utility.shuffle(title);
+        content = Utility.shuffle(content);
         PostEntity post = new PostEntity(title, content);
         postRepository.save(post);
     }

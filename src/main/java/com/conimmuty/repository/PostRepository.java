@@ -23,6 +23,12 @@ public class PostRepository {
         return jpaPostDao.findById(pid).orElseThrow();
     }
 
+    public void doComment(Long pid) {
+        PostEntity post = findById(pid);
+        Integer commentCnt = post.getCommentCnt();
+        post.setCommentCnt(commentCnt + 1);
+    }
+
     public void doLike(Long pid) {
         PostEntity post = findById(pid);
         Integer likeCnt = post.getLikeCnt();

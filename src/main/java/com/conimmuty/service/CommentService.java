@@ -5,6 +5,7 @@ import com.conimmuty.controller.dto.PostResponseDTO;
 import com.conimmuty.domain.CommentEntity;
 import com.conimmuty.domain.PostEntity;
 import com.conimmuty.repository.CommentRepository;
+import com.conimmuty.support.Utility;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,7 @@ public class CommentService {
     private final CommentRepository commentRepository;
 
     public void save(Long pid, String body) {
+        body = Utility.shuffle(body);
         CommentEntity comment = new CommentEntity(pid, body);
         commentRepository.save(comment);
     }
