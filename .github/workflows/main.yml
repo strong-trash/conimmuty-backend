@@ -1,0 +1,21 @@
+name: Backend Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{secrets.HOST}}
+          username: ${{secrets.USERNAME}}
+          key: ${{secrets.KEY}}
+          port: ${{secrets.PORT}}
+          script: |
+            cd conimmuty-backend
+            git pull
+            docker-compose down
+            ./run.sh
