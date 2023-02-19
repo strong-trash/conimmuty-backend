@@ -68,6 +68,8 @@ public class Utility {
     private static Boolean checkKorean(char ch) {
         int start = '가';
         int end = '힣';
-        return start <= ch && ch <= end;
+        int st = 'ㄱ';
+        int en = 'ㅎ';
+        return start <= ch && ch <= end || st <= ch && ch <= en;
     }
 }
