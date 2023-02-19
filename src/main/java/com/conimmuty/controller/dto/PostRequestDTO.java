@@ -1,13 +1,11 @@
 package com.conimmuty.controller.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class PostRequestDTO {
-    private String title;
-    private String content;
+    public String title;
+    public String content;
 }
