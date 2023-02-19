@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  community:
+    build: .
+    ports:
+      - '9000:9000'
+    environment:
+      - TZ=Asia/Seoul
+    env_file:
+      - ./backend.env
+  mydb:
+    image: 'mysql'
+    volumes:
+      - mysql-volume:/var/lib/mysql
+    env_file:
+      - ./mysql.env
+
+volumes:
+  mysql-volume:
